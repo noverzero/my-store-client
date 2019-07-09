@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.scss';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react'
+import './App.scss'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // Component imports
 import Navigation from './components/Navigation'
@@ -16,7 +16,7 @@ function App() {
         <Route path='/products' component={Products} />
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
