@@ -26,6 +26,16 @@ class ProductDetail extends Component {
 
   initiateStripeCheckout = async () => {
     const stripe = window.Stripe('pk_test_U97OqImzWdzzRotfPzXt3Req00UQtQ1rnD')
+    const { product } = this.state
+
+    const lineItem = {
+      name: product.name,
+      description: product.description,
+      images: [product.img_url],
+      amount: product.price,
+      currency: 'usd',
+      quantity: 1
+    }
 
     try {
       // Initiate checkout session to get session id
@@ -34,7 +44,8 @@ class ProductDetail extends Component {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(lineItem)
       })
 
       const data = await response.json()
