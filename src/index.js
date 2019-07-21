@@ -5,8 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //Auth0
-import { Auth0Provider } from "./react-auth0-wrapper";
-import config from "./auth_config.json";
+import { Auth0Provider } from './react-auth0-wrapper';
+import config from './auth_config.json';
 
 // A function that routes the user to the right place
 // after login
@@ -26,6 +26,7 @@ ReactDOM.render(
     client_id={config.clientId}
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}
+    audience={config.audience}
 >
     <App />
   </Auth0Provider>,

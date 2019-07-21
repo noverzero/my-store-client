@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth0 } from '../react-auth0-wrapper';
+import { useAuth0 } from '../react-auth0-wrapper'
 
 
 const Navigation = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
 
   return (
     <nav>
       <Link to='/'>Home</Link>
       <Link to='/products'>Products</Link>
+      <Link to='/test'>Test API</Link>
       {/* NEW - add a link to the home and profile pages */}
       {isAuthenticated && (
         <span>
